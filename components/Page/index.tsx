@@ -38,7 +38,7 @@ const Page = ({
           /> */}
 
           <div className="absolute z-10 h-full w-full bg-gradient-to-r from-black/80 to-black/40
-          flex items-center justify-center p-4">
+          flex flex-col gap-8 lg:gap-12 items-center justify-center p-4">
 
             {children}
           </div>
