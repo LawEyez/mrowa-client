@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -13,15 +13,14 @@ const NavLink = ({
   const router = useRouter()
 
   // Add active styles.
-  const activeStyles = router.asPath === path && (
+  const activeStyles = useMemo(() => router.asPath === path && (
     'text-gray-900 bg-white'
-  )
+  ), [path, router.asPath])
 
   return (
     <Link href={path} passHref>
       <a href="" className={`uppercase text-xs text-white hover:bg-white
-    hover:text-gray-900 tracking-widest px-6 py-4 cursor-pointer ${activeStyles}
-    `}>
+    hover:text-gray-900 tracking-widest px-6 py-4 cursor-pointer ${activeStyles}`}>
         {name}
       </a>
     </Link>
