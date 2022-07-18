@@ -17,6 +17,7 @@ const SliderButton = ({
       duration-200 transition flex items-center justify-center
       text-2xl ${inactiveStyles} outline-none`}
       onClick={handleClick}
+      disabled={!active}
     >
       {icon}
     </button>

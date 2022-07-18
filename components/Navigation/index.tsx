@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { CgMenuRight } from 'react-icons/cg'
+import { CgClose, CgMenuRight } from 'react-icons/cg'
 
 import Brand from '@components/Brand'
 import Contact from '@components/Contact'
@@ -21,7 +21,11 @@ const Navigation = () => {
         cursor-pointer top-1/2 -translate-y-1/2 lg:hidden'
         onClick={() => setOpen(prev => !prev)}
       >
-       <CgMenuRight />
+        {open ? (
+          <CgClose />
+        ) : (
+          <CgMenuRight />
+        )}
       </div>
 
       <div className={`flex flex-col gap-12 translate-y-12 bg-gray-900 translate-x-full
