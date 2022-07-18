@@ -1,6 +1,6 @@
 import Head from "next/head"
 
-import { metadata } from "config"
+import { metadata } from "@utils/config"
 
 
 export type SEOProps = {

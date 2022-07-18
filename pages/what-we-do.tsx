@@ -2,6 +2,8 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
 
 import Page from "@components/Page"
 
+import { ISection } from "@utils/types"
+
 
 const WhatWeDo: NextPage = ({
   data 
@@ -31,27 +33,10 @@ const WhatWeDo: NextPage = ({
 
 export default WhatWeDo
 
-interface IData {
-  id: number,
-  url: string,
-  title: string,
-  content: string,
-  image: string,
-  sub_sections: ISubSection[]
-}
 
-interface ISubSection {
-  id: number,
-  section: number,
-  title: string,
-  sub_title: string,
-  content: string,
-  image: string,
-  date_created: string
-}
 
 export const getStaticProps: GetStaticProps = async () => {
-  const data: IData = await fetch('https://mbw-site.herokuapp.com/api/v1/sections/what-we-do')
+  const data: ISection = await fetch('https://mbw-site.herokuapp.com/api/v1/sections/what-we-do')
     .then(res => res.json())
 
   return {

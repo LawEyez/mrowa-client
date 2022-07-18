@@ -1,5 +1,7 @@
-import { contactInfo } from 'config'
 import React from 'react'
+
+import { contactInfo } from '@utils/config'
+
 
 const Contact = () => {
   return (
