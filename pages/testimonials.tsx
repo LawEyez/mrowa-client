@@ -22,9 +22,10 @@ const Testimonials: NextPage = ({
           <div
             key={section.id}
             className='flex flex-col items-start p-4 bg-white rounded-lg
-            gap-4 w-96 text-gray-900'
+            gap-4 w-[90%] md:w-96 text-gray-900 flex-shrink-0'
           >
-            <div className="flex items-center gap-4">
+            <div className="flex flex-col justify-center items-center gap-4
+            w-max mx-auto">
               <div className="relative w-20 h-20 rounded-full object-cover overflow-hidden flex-shrink-0">
                 <img
                 className="w-full h-full object-cover"
@@ -33,7 +34,7 @@ const Testimonials: NextPage = ({
                 />
               </div>
 
-              <div>
+              <div className="text-center whitespace-normal">
                 <h2 className="font-semibold text-xl">
                   {section.title}
                 </h2>
