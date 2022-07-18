@@ -42,9 +42,9 @@ const Slider = ({
     <>
       <div
         ref={emblaRef}
-        className='overflow-hidden'
+        className='overflow-hidden w-[90%] xl:w-full'
       >
-        <div className="flex items-center gap-20">
+        <div className="flex items-center flex-shrink-0 gap-20">
           {children}
         </div>
       </div>

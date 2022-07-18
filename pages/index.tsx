@@ -20,7 +20,7 @@ const Home: NextPage = ({
         {data?.map((item: any, i: number) => (
           <div
             key={i}
-            className="mx-auto sm:pr-0 text-center w-full xl:w-[40%]"
+            className="mx-auto sm:pr-0 text-center w-full lg:w-[50%] xl:w-[40%] flex-shrink-0"
           >
             <h1 className="text-6xl lg:text-7xl font-semibold tracking-tighter">{item.title}.</h1>
             <p className="mt-8 text-neutral-300">we sculpture entire cities.</p>

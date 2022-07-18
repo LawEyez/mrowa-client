@@ -21,7 +21,7 @@ const OurProcess: NextPage = ({
         {data.sub_sections.map((section: any) => (
           <div
             key={section.id}
-            className='w-72 xl:w-96'
+            className='w-80 xl:w-80 flex-shrink-0'
           >
             <h2 className="text-6xl tracking-tighter font-bold
             after:content[''] after:block after:w-16 after:h-[1px]
