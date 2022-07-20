@@ -28,13 +28,13 @@ const Testimonials: NextPage = ({
             w-max mx-auto">
               <div className="relative w-20 h-20 rounded-full object-cover overflow-hidden flex-shrink-0">
                 <img
-                className="w-full h-full object-cover"
+                  className="w-full h-full object-cover"
                   src={section.image}
                   alt={section.title}
                 />
               </div>
 
-              <div className="text-center whitespace-normal">
+              <div className="text-center break-words">
                 <h2 className="font-semibold text-xl">
                   {section.title}
                 </h2>

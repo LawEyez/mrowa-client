@@ -38,6 +38,7 @@ const Navigation = () => {
           <NavLink path='/our-process' name='our process' />
           <NavLink path='/our-team' name='our team' />
           <NavLink path='/testimonials' name='testimonials' />
+          <NavLink path='/portfolio' name='portfolio' />
         </div>
 
         <Contact />

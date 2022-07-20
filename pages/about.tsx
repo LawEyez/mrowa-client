@@ -13,11 +13,11 @@ const About: NextPage = ({
         desc: 'Learn more about Mrowa Building Workshop'
       }}
     >
-      <div className="md:w-[60%] lg:w-[50%]">
+      <div className="md:w-[60%] lg:w-[50%] lg:absolute lg:right-8">
         <h1 className="text-6xl tracking-tighter font-bold">{data?.title}</h1>
 
-        <div className="pr-4 mt-8 h-96 overflow-y-scroll leading-8
-        text-xl font-light">
+        <div className="mt-8 h-96 overflow-y-scroll leading-8
+        text-xl font-light bg-gray-900/80 p-8 rounded-lg">
           {data?.content}
         </div>
       </div>
