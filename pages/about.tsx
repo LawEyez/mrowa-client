@@ -14,10 +14,15 @@ const About: NextPage = ({
       }}
     >
       <div className="md:w-[60%] lg:w-[50%] lg:absolute lg:right-8">
-        <h1 className="text-6xl tracking-tighter font-bold">{data?.title}</h1>
+        <div className="bg-gray-800 p-8 text-center">
+          <h1 className="text-4xl font-bold uppercase
+          tracking-widest">
+            {data?.title}
+          </h1>
+        </div>
 
-        <div className="mt-8 h-96 overflow-y-scroll leading-8
-        text-xl font-light bg-gray-900/80 p-8 rounded-lg">
+        <div className="h-96 overflow-y-scroll leading-8
+        text-xl font-light bg-gray-500/80 p-8">
           {data?.content}
         </div>
       </div>

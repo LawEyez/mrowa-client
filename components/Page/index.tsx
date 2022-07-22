@@ -2,6 +2,7 @@ import { ReactNode } from "react"
 
 import SEO, { SEOProps } from "@components/SEO"
 import Navigation from "@components/Navigation"
+import Header from "@components/Header"
 
 
 type PageProps = {
@@ -17,6 +18,7 @@ const Page = ({
     <>
       <SEO {...meta} />
 
+      <Header />
       <Navigation />
 
       <main className="relative bg-neutral-900 text-white min-h-screen w-full">
@@ -38,7 +40,7 @@ const Page = ({
           /> */}
 
           <div className="absolute z-10 h-full w-full bg-gradient-to-r from-black/80 to-black/40
-          flex flex-col gap-8 lg:gap-12 items-center justify-center p-4">
+          flex flex-col gap-8 lg:gap-12 items-center justify-center p-4 pt-8">
 
             {children}
           </div>

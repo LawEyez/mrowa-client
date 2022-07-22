@@ -31,7 +31,7 @@ const Portfolio: NextPage = ({
                 <img
                   className="rounded-lg h-60 w-full object-cover"
                   src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
-                  alt=""
+                  alt="img_holder"
                 />
               </div>
               <h2 className="text-2xl font-medium tracking-tight">{section.title}</h2>
