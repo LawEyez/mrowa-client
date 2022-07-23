@@ -15,12 +15,12 @@ const Portfolio: NextPage = ({
         desc: 'Our building and construction projects.'
       }}
     >
-      <div className="h-full py-12 lg:w-[60%] xl:w-[50%] overflow-y-scroll">
+      <div className="h-full py-12 w-full overflow-y-scroll">
         <h1 className="font-bold tracking-tighter capitalize text-4xl mb-8">
           portfolio
         </h1>
 
-        <div className="grid grid-col-1 md:grid-cols-2 gap-6 flex-wrap
+        <div className="grid grid-col-1 md:grid-cols-2 lg:grid-cols-3 gap-4 flex-wrap
         pr-4 overflow-y-scroll">
           {data?.sub_sections.map((section: any) => (
             <div

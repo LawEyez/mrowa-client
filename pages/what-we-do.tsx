@@ -1,6 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
+import { useEffect, useMemo, useState } from "react"
 
 import Page from "@components/Page"
+import Content from "@components/Content"
 
 import { ISection } from "@utils/types"
 
@@ -8,6 +10,27 @@ import { ISection } from "@utils/types"
 const WhatWeDo: NextPage = ({
   data 
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [index, setIndex] = useState(0)
+  const [item, setItem] = useState(data.sub_sections[0])
+
+  const len = useMemo(() => data.sub_sections.length, [data])
+
+  useEffect(() => {
+    setItem(data.sub_sections[index])
+  }, [index, data.sub_sections])
+
+  const handleNext = () => {
+    if (index < len - 1 ) {
+      setIndex(prev => (prev + 1))
+    }
+  }
+  
+  const handlePrev = () => {
+    if (index > 0) {
+      setIndex(prev => (prev - 1))
+    }
+  }
+
   return (
     <Page
       meta={{
@@ -15,18 +38,12 @@ const WhatWeDo: NextPage = ({
         desc: 'Our building and construction products and services.'
       }}
     >
-      <div className="grid grid-col-1 md:grid-cols-2 gap-6 flex-wrap lg:w-[60%] xl:w-[50%]
-      h-full py-12 pr-4 overflow-y-scroll">
-        {data?.sub_sections.map((section: any) => (
-          <div
-            key={section.id}
-            className='rounded-xl bg-gray-900/90 border border-gray-700 p-6'
-          >
-            <h2 className="text-4xl font-semibold tracking-tight">{section.title}</h2>
-            <p className="mt-4 text-gray-300">{section.content}</p>
-          </div>
-        ))}
-      </div>
+      <Content
+        title={item.sub_title}
+        content={item.content}
+        next={handleNext}
+        prev={handlePrev}
+      />
     </Page>
   )
 }
