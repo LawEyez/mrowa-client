@@ -15,7 +15,7 @@ const ImageCard = ({
           alt={item.title}
         />
       </div>
-      <h2 className="text-2xl font-medium tracking-tight">{item.title}</h2>
+      {item.title && <h2 className="text-2xl font-medium tracking-tight">{item.title}</h2>}
     </div>
   )
 }
