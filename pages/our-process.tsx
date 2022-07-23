@@ -1,14 +1,36 @@
+import { useEffect, useMemo, useState } from "react"
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
 
 import Page from "@components/Page"
 import Slider from "@components/Slider"
 
 import { ISection } from "@utils/types"
+import Content from "@components/Content"
 
 
 const OurProcess: NextPage = ({
   data 
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [index, setIndex] = useState(0)
+  const [item, setItem] = useState(data.sub_sections[0])
+
+  const len = useMemo(() => data.sub_sections.length, [data])
+
+  useEffect(() => {
+    setItem(data.sub_sections[index])
+  }, [index, data.sub_sections])
+
+  const handleNext = () => {
+    if (index < len - 1 ) {
+      setIndex(prev => (prev + 1))
+    }
+  }
+  
+  const handlePrev = () => {
+    if (index > 0) {
+      setIndex(prev => (prev - 1))
+    }
+  }
 
   return (
     <Page
@@ -17,22 +39,12 @@ const OurProcess: NextPage = ({
         desc: 'Our approach to building and construction.'
       }}
     >
-      <Slider>
-        {data.sub_sections.map((section: any) => (
-          <div
-            key={section.id}
-            className='w-80 xl:w-80 flex-shrink-0'
-          >
-            <h2 className="text-6xl tracking-tighter font-bold
-            after:content[''] after:block after:w-16 after:h-[1px]
-            after:bg-white after:my-4">
-              {section.title}
-            </h2>
-
-            <p className="text-gray-200">{section.content}</p>
-          </div>
-        ))}
-      </Slider>
+      <Content
+        title={item.sub_title}
+        content={item.content}
+        next={handleNext}
+        prev={handlePrev}
+      />
     </Page>
   )
 }

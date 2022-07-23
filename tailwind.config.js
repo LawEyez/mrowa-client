@@ -10,6 +10,10 @@ module.exports = {
     extend: {
       fontFamily: {
         'sans': ['Outfit', ...defaultTheme.fontFamily.sans]
+      },
+      colors: {
+        'mbw-gray': '#cfbfa3',
+        'mbw-blue': '#0f2b42'
       }
     },
   },
