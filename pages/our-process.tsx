@@ -3,9 +3,9 @@ import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
 
 import Page from "@components/Page"
 import Slider from "@components/Slider"
+import Content from "@components/Content"
 
 import { ISection } from "@utils/types"
-import Content from "@components/Content"
 
 
 const OurProcess: NextPage = ({
