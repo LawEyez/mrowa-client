@@ -21,8 +21,8 @@ const Page = ({
       <Header />
       <Navigation />
 
-      <main className="relative bg-neutral-900 text-white min-h-screen w-full">
-        <div className="relative w-full h-screen">
+      <main className="relative bg-neutral-900 text-white h-screen w-full">
+        <div className="lg:absolute lg:right-0 lg:w-[calc(100%-13rem)] lg:h-[calc(100%-3rem)] pt-12">
           <img
             className='absolute w-full h-full object-cover'
             src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
@@ -40,7 +40,7 @@ const Page = ({
           /> */}
 
           <div className="absolute z-10 h-full w-full bg-gradient-to-r from-black/80 to-black/40
-          flex flex-col gap-8 lg:gap-12 items-center justify-center p-4 pt-8">
+          flex flex-col gap-8 lg:gap-12 items-center justify-center p-4">
 
             {children}
           </div>
