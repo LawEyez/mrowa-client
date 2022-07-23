@@ -15,7 +15,7 @@ const Portfolio: NextPage = ({
         desc: 'Our building and construction projects.'
       }}
     >
-      <div className="h-full py-12 w-full overflow-y-scroll">
+      <div className="h-full py-12 pl-4 w-full overflow-y-scroll bg-white text-gray-900">
         <h1 className="font-bold tracking-tighter capitalize text-4xl mb-8">
           portfolio
         </h1>
@@ -29,7 +29,7 @@ const Portfolio: NextPage = ({
             >
               <div className="">
                 <img
-                  className="rounded-lg h-60 w-full object-cover"
+                  className="rounded-lg h-60 w-full object-cover shadow"
                   src="https://images.unsplash.com/photo-1600210492493-0946911123ea?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80"
                   alt="img_holder"
                 />

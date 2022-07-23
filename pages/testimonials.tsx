@@ -35,10 +35,10 @@ const Testimonials: NextPage = ({
               </div>
 
               <div className="text-center break-words">
-                <h2 className="font-semibold text-xl">
+                <h2 className="font-semibold text-lg md:text-xl">
                   {section.title}
                 </h2>
-                <h4 className="mt-1">{section.sub_title}</h4>
+                <h4 className="mt-1 text-sm md:text">{section.sub_title}</h4>
               </div>
             </div>
 
