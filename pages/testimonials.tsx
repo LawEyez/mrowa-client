@@ -1,15 +1,35 @@
+import { useEffect, useMemo, useState } from "react"
 import { GetStaticProps, InferGetStaticPropsType, NextPage } from "next"
-import Image from "next/image"
 
 import Page from "@components/Page"
-import Slider from "@components/Slider"
+import Content from "@components/Content"
 
-import { ISection, ISubSection } from "@utils/types"
+import { ISection } from "@utils/types"
 
 
 const Testimonials: NextPage = ({
   data 
 }: InferGetStaticPropsType<typeof getStaticProps>) => {
+  const [index, setIndex] = useState(0)
+  const [item, setItem] = useState(data.sub_sections[0])
+
+  const len = useMemo(() => data.sub_sections.length, [data])
+
+  useEffect(() => {
+    setItem(data.sub_sections[index])
+  }, [index, data.sub_sections])
+
+  const handleNext = () => {
+    if (index < len - 1 ) {
+      setIndex(prev => (prev + 1))
+    }
+  }
+  
+  const handlePrev = () => {
+    if (index > 0) {
+      setIndex(prev => (prev - 1))
+    }
+  }
   return (
     <Page
       meta={{
@@ -17,35 +37,13 @@ const Testimonials: NextPage = ({
         desc: 'What our customers say about us.'
       }}
     >
-      <Slider>
-        {data.sub_sections.map((section: ISubSection) => (
-          <div
-            key={section.id}
-            className='flex flex-col items-start p-4 bg-white rounded-lg
-            gap-4 w-[90%] md:w-96 text-gray-900 flex-shrink-0'
-          >
-            <div className="flex flex-col justify-center items-center gap-4
-            w-max mx-auto">
-              <div className="relative w-20 h-20 rounded-full object-cover overflow-hidden flex-shrink-0">
-                <img
-                  className="w-full h-full object-cover"
-                  src={section.image}
-                  alt={section.title}
-                />
-              </div>
-
-              <div className="text-center break-words">
-                <h2 className="font-semibold text-lg md:text-xl">
-                  {section.title}
-                </h2>
-                <h4 className="mt-1 text-sm md:text">{section.sub_title}</h4>
-              </div>
-            </div>
-
-            <p className="text-gray-700 text-sm">{section.content}</p>
-          </div>
-        ))}
-      </Slider>
+      <Content
+        title={item.sub_title}
+        content={item.content}
+        next={handleNext}
+        prev={handlePrev}
+        sub_title={item.title}
+      />
     </Page>
   )
 }

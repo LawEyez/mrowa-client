@@ -7,7 +7,8 @@ const Content = ({
   title,
   content,
   next,
-  prev
+  prev,
+  sub_title
 }: ContentProps) => {
   return (
     <div className="md:w-[60%] lg:w-[50%] lg:absolute lg:right-0
@@ -20,8 +21,10 @@ const Content = ({
       </div>
 
       <div className="h-full overflow-y-scroll leading-8
-      text-xl font-light bg-mbw-gray/80 text-gray-900 p-8">
+      text-xl font-light bg-neutral-300/80 text-gray-900 p-8">
         {content}
+
+        {sub_title && <h3 className='my-4 text-sm font-semibold'>- {sub_title}</h3>}
 
         {next && prev && (
           <div className="flex items-center justify-center gap-4 mt-8">

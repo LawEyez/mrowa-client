@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { ImageCardProps } from './types'
 
@@ -6,7 +6,10 @@ import { ImageCardProps } from './types'
 const ImageCard = ({
   item
 }: ImageCardProps) => {
+  
   return (
+    <>
+    {}
     <div className='space-y-4'>
       <div className="">
         <img
@@ -17,6 +20,7 @@ const ImageCard = ({
       </div>
       {item.title && <h2 className="text-2xl font-medium tracking-tight">{item.title}</h2>}
     </div>
+    </>
   )
 }
 
